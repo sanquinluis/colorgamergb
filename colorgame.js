@@ -1,17 +1,20 @@
 // array of basic colors set to default when the game starts
-var colors = [
-	"rgb(255, 0, 0)",
-	"rgb(255,255, 0)",
-	"rgb(0, 255, 0)",
-	"rgb(0, 255, 255)",
-	"rgb(0, 0, 255)",
-	"rgb(255, 0, 255)"
-	]
+var colors = generateRandomColors(6);
+// hard coded array
+// [
+// 	"rgb(255, 0, 0)",
+// 	"rgb(255,255, 0)",
+// 	"rgb(0, 255, 0)",
+// 	"rgb(0, 255, 255)",
+// 	"rgb(0, 0, 255)",
+// 	"rgb(255, 0, 255)"
+// 	]
 	// selecting with querySelectorAll the class square to loop and set up the colors.
 var squares = document.querySelectorAll(".square");
 var pickedColor = pickColor();
 var colorDisplay = document.getElementById("colorDisplay");
 var messageDisplay = document.querySelector("#message");
+var h1 = document.querySelector("h1");
 
 colorDisplay.textContent = pickedColor;
 	
@@ -22,10 +25,13 @@ colorDisplay.textContent = pickedColor;
 		squares[i].addEventListener("click", function(){
 			//grab color of clicked square
 			var clickedColor = this.style.backgroundColor;
+			console.log(clickedColor, pickedColor);
 			// compare color to pickedColor
 				if(clickedColor === pickedColor){
 					messageDisplay.textContent = "Correct!!";
 					changeColors(clickedColor);
+					h1.backgroundColor = clickedColor;
+
 				}else {
 					this.style.backgroundColor = "#232323";
 					messageDisplay.textContent = "Try Again";
@@ -46,3 +52,31 @@ function pickColor() {
 		var random = Math.floor(Math.random() * colors.length);
 		return colors[random];
 }
+
+function generateRandomColors(num){
+	//make an array
+	var arr = [];
+// repeat num times 
+	for(var i = 0; i < num; i++){
+		// get random color push into empty arr
+		arr.push(randomColor());
+	}
+	// empty to empty array
+	return arr
+}
+
+function randomColor(){
+	// pick a "red" from 0 -255
+	var r = Math.floor(Math.random() * 256);
+	// pick a "green" from 0 -255
+	var g = Math.floor(Math.random() * 256);
+	// pick a "blue" from 0 -255
+	var b = Math.floor(Math.random() * 256);
+	"rgb(r, g, b)"
+	return "rgb(" + r + ", " + g + ", " + b + ")";
+}
+
+
+
+
+
