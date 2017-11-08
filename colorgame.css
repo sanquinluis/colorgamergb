@@ -14,8 +14,19 @@ body {
 }
 h1 {
 	color: white;
+	text-align: center;
 }
 
-span {
+/*span {
 	color: white;
+}*/
+#stripe {
+	background-color: white;
+	height: 45px;
+	text-align: center;
+	color: black;
+
 }
+/*.btn btn-info {
+	margin-top: 10px;
+}*/
