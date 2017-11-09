@@ -30,3 +30,7 @@ h1 {
 /*.btn btn-info {
 	margin-top: 10px;
 }*/
+.selected {
+	background-color: blue;
+
+}
