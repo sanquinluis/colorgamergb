@@ -36,6 +36,8 @@ easyBtn.addEventListener("click", function(){
 			squares[i].style.display = "none";
 		}
 	}
+	h1.style.backgroundColor = "steelblue";
+
 });
 hardBtn.addEventListener("click", function(){
 	// alert("Hey Hard");
@@ -49,6 +51,8 @@ hardBtn.addEventListener("click", function(){
 		squares[i].style.backgroundColor = colors[i];
 		squares[i].style.display = "block";
 	}
+	h1.style.backgroundColor = "steelblue";
+
 });
 
 
@@ -65,7 +69,7 @@ hardBtn.addEventListener("click", function(){
 		for(var i = 0; i <squares.length; i++){
 		squares[i].style.backgroundColor = colors[i];
 	}
-	h1.style.backgroundColor = "#232323";
+	h1.style.backgroundColor = "steelblue";
 	// alert("hey");
 });
 
@@ -74,7 +78,7 @@ hardBtn.addEventListener("click", function(){
 		for(var i = 0;i < squares.length; i++){
 		//add initial colors to squares
 			squares[i].style.backgroundColor = colors[i]
-
+			// add event listener
 			squares[i].addEventListener("click", function(){
 			//grab color of clicked square
 				var clickedColor = this.style.backgroundColor;
